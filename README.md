@@ -39,3 +39,7 @@ View တွေ ရေး။
 URL ချိတ်။
 
 အကုန်ချိတ်ပြီးရင် Business Logic တွေ လိုက်ရေး။
+
+
+Quiz -> Question -> Answers
+
