@@ -2,7 +2,6 @@
 <form action="/login-check/" method="POST">
     {% csrf_token %}
     <input type="text" name="username" required placeholder="Enter Username"/>
-    <input type="email" name="email" required placeholder="Enter email"/>
     <input type="password" name="password" required placeholder="Enter pass" />
     <input type="submit" value="Login" />
 </form>
