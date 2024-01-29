@@ -79,8 +79,31 @@ def logout_page(request):
     logout(request)
     return redirect("index")
 
+# Quiz Business Logic
+
+def quiz_store(request):
+    return redirect('quiz_list_page')
+
+def quiz_update(request, quiz_id):
+    return redirect('quiz_list_page')
 # Quiz UI
 def quiz_list_page(request):
     person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
     data = {'person_list': person_list, 'title' : 'Person List' }
     return render(request, 'quiz/quiz_list.html', data)
+
+def quiz_create_page(request):
+    person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
+    data = {'person_list': person_list, 'title' : 'Person List' }
+    return render(request, 'quiz/quiz_create.html', data)
+
+def quiz_edit_page(request, quiz_id):
+    person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
+    data = {
+        'person_list': person_list, 
+        'title' : 'Person List' , 
+        'quiz_id' : quiz_id
+    }
+    return render(request, 'quiz/quiz_edit.html', data)
+
+
