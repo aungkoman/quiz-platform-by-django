@@ -30,3 +30,10 @@ display name -> first name
 
 ## Quiz Listing & CRUD
 
+Template တွေ အကုန်ချရေး။
+
+View တွေ ရေး။
+- ui
+- business logic
+
+URL ချိတ်။
