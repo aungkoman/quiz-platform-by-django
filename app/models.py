@@ -1,9 +1,10 @@
 from django.db import models
 
+from django.contrib.auth.models import User # Built-in user model
 # Create your models here.
 
 class Quiz(models.Model):  
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.TextField()
     description = models.TextField()
 

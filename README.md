@@ -37,3 +37,5 @@ View တွေ ရေး။
 - business logic
 
 URL ချိတ်။
+
+အကုန်ချိတ်ပြီးရင် Business Logic တွေ လိုက်ရေး။

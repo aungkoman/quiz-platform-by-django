@@ -6,6 +6,9 @@ from django.contrib.auth.models import User # Built-in user model
 from django.contrib.auth import login # Built-in login function
 from django.contrib.auth import logout # Built-in logout function
 from django.contrib.auth.decorators import login_required # for login protected routes
+
+from app.models import Quiz
+
 def helloWorld(request):
     return HttpResponse("Hello, world. You're at the money app -> index method")
 
@@ -81,15 +84,37 @@ def logout_page(request):
 
 # Quiz Business Logic
 
+@login_required
 def quiz_store(request):
+    if request.method == 'POST':
+        # Access form data using request.POST
+        title = request.POST.get('title')
+    else:
+        # Handle non-POST requests as needed
+        return HttpResponse('This view only handles POST requests')
+    # Article.objects.create(user_profile_info=user_profile, description= description, media = media )
+    user = request.user
+    title = request.POST['title']
+    description = request.POST['description']
+    quiz = Quiz.objects.create(user=user, title=title, description=description)
     return redirect('quiz_list_page')
 
 def quiz_update(request, quiz_id):
     return redirect('quiz_list_page')
 # Quiz UI
+@login_required
 def quiz_list_page(request):
+    user = request.user
+    # Article.objects.filter(user_profile_info = user_profile)
+    quiz_list = Quiz.objects.filter(user=user)
     person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
-    data = {'person_list': person_list, 'title' : 'Person List' }
+    
+    data = {
+        'person_list': person_list, 
+        'title' : 'Person List',
+        'quiz_list' : quiz_list
+    }
+
     return render(request, 'quiz/quiz_list.html', data)
 
 def quiz_create_page(request):
