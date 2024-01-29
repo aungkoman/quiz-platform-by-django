@@ -14,3 +14,19 @@ def login(request):
     #return HttpResponse("Hello, world. You're at the money app -> index method")
     person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
     return render(request, 'login.html',{'person_list': person_list, 'title' : 'Person List' })
+
+def register(request):
+    person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
+    return render(request, 'register.html',{'person_list': person_list, 'title' : 'Person List' })
+
+def login_check(request):
+    person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
+    return render(request, 'dashboard.html',{'person_list': person_list, 'title' : 'Person List' })
+
+def register_check(request):
+    person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
+    return render(request, 'dashboard.html',{'person_list': person_list, 'title' : 'Person List' })
+
+def dasbhoard(request):
+    person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
+    return render(request, 'dashboard.html',{'person_list': person_list, 'title' : 'Person List' })
