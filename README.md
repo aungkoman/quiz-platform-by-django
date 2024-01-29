@@ -17,3 +17,8 @@ python manage.py createsuperuser
 admin
 password
 
+
+
+## Login Page
+
+Index Page -> Login Page 
