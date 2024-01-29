@@ -22,3 +22,7 @@ password
 ## Login Page
 
 Index Page -> Login Page 
+
+
+Dashboard မှာ Login ဝင်ထားတဲ့သူရဲ့ နာမည်ပြမယ်။
+display name -> first name
