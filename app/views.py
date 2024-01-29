@@ -78,3 +78,9 @@ def register_check(request):
 def logout_page(request):
     logout(request)
     return redirect("index")
+
+# Quiz UI
+def quiz_list_page(request):
+    person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
+    data = {'person_list': person_list, 'title' : 'Person List' }
+    return render(request, 'quiz/quiz_list.html', data)

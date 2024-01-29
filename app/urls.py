@@ -10,5 +10,6 @@ urlpatterns = [
     path("register-check/", views.register_check, name="register_check"),
     # path("dasbhoard/", views.dasbhoard, name="dasbhoard"),
     path('dashboard/', views.dasbhoard, name='dashboard'),
-    path('logout/', views.logout_page, name='logout')
+    path('logout/', views.logout_page, name='logout'),
+    path('quiz/', views.quiz_list_page, name='quiz_list_page')
 ]
