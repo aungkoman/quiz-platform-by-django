@@ -1,0 +1,7 @@
+<h2>New Quiz Form</h2>
+<form action="/quiz-store/" method="POST">
+    {% csrf_token %}
+    <input type="text" name="title" required placeholder="Enter Quiz Title"/>
+    <input type="text" name="description" required placeholder="Enter Quiz Name"/>
+    <input type="submit" value="Create New Quiz" />
+</form>

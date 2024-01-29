@@ -1,0 +1,8 @@
+<h2>Edit Quiz Form</h2>
+<form action="/quiz-update/{{ quiz.id }}" method="POST">
+    {% csrf_token %}
+    <input type="number" name="id" value="{{ quiz.id }}" required />
+    <input type="text" name="title" required placeholder="Enter Quiz Title"/>
+    <input type="text" name="description" required placeholder="Enter Quiz Name"/>
+    <input type="submit" value="Create New Quiz" />
+</form>
