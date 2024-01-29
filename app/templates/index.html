@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index Page</title>
-</head>
-<body>
-    <h2>Hello Indez</h2>
-</body>
+  </head>
+  <body>
+    <h2>{{ title }}</h2>
+    <ul>
+      <!-- python ဘက်က pass ပေးလိုက်တဲ့ SET ထဲက person_list ကို ယူမယ်။​ သူက String List ဆိုတော့ Loop ပတ်မယ် -->
+      {% for person in person_list %}
+      <li>{{ person }}</li>
+      {% endfor %}
+    </ul>
+  </body>
 </html>

@@ -7,4 +7,5 @@ def helloWorld(request):
 
 def index(request):
     #return HttpResponse("Hello, world. You're at the money app -> index method")
-    return render(request, 'index.html')
+    person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
+    return render(request, 'index.html',{'person_list': person_list, 'title' : 'Person List' })
