@@ -108,6 +108,12 @@ def quiz_update(request, quiz_id):
     quiz.save()
 
     return redirect('quiz_list_page')
+
+def quiz_delete(request, quiz_id):
+    quiz = get_object_or_404(Quiz, id=quiz_id)
+    quiz.delete()
+    return redirect('quiz_list_page')
+
 # Quiz UI
 @login_required
 def quiz_list_page(request):

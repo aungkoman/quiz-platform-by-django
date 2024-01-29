@@ -4,6 +4,7 @@
             {{ quiz.title }} 
             <a href="{% url 'quiz_detail_page' quiz.id %}">Detail</a>
             <a href="{% url 'quiz_edit_page' quiz.id %}">Edit</a>
+            <a href="{% url 'quiz_delete' quiz.id %}">Delete</a>
       </li>
 {% endfor %}
 
