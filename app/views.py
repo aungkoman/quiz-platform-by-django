@@ -6,8 +6,8 @@ from django.contrib.auth.models import User # Built-in user model
 from django.contrib.auth import login # Built-in login function
 from django.contrib.auth import logout # Built-in logout function
 from django.contrib.auth.decorators import login_required # for login protected routes
-
-from app.models import Quiz
+from django.shortcuts import get_object_or_404 # select လုပ်တဲ့ function
+from app.models import Quiz, Question
 
 def helloWorld(request):
     return HttpResponse("Hello, world. You're at the money app -> index method")
@@ -100,6 +100,13 @@ def quiz_store(request):
     return redirect('quiz_list_page')
 
 def quiz_update(request, quiz_id):
+    quiz = get_object_or_404(Quiz, id=quiz_id)
+    title = request.POST['title']
+    description = request.POST['description']
+    quiz.title = title
+    quiz.description = description
+    quiz.save()
+
     return redirect('quiz_list_page')
 # Quiz UI
 @login_required
@@ -124,11 +131,24 @@ def quiz_create_page(request):
 
 def quiz_edit_page(request, quiz_id):
     person_list = ['Aung Aung', 'Ma Ma', 'Mg Mg']
+    quiz = get_object_or_404(Quiz, id=quiz_id)
     data = {
         'person_list': person_list, 
-        'title' : 'Person List' , 
-        'quiz_id' : quiz_id
+        'title' : 'Person List' ,
+        'quiz' : quiz
     }
     return render(request, 'quiz/quiz_edit.html', data)
+
+def quiz_detail_page(request, quiz_id):
+    # Using get_object_or_404 to raise a 404 error if the object is not found
+    # your_object = get_object_or_404(YourModel, id=object_id)
+    quiz = get_object_or_404(Quiz, id=quiz_id)
+    question_list = Question.objects.filter(quiz = quiz)
+    data = {
+        'title' : 'Quiz Detail' , 
+        'quiz' : quiz,
+        'question_list': question_list
+    }
+    return render(request, 'quiz/quiz_detail.html', data)
 
 

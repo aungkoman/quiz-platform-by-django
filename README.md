@@ -43,3 +43,12 @@ URL ချိတ်။
 
 Quiz -> Question -> Answers
 
+- [x] Quiz Listing
+- [x] Quiz Create
+- [ ] Quiz Detail
+- [ ] Quiz Edit
+- [ ] Quiz Delete
+
+views. ထဲမှာ စုမရေးပဲ
+တစ်ဖိုင်ချင်းစီ ခွဲထုတ်။
+

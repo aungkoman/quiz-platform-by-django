@@ -1,8 +1,7 @@
 <h2>Edit Quiz Form {{ quiz_id }}</h2>
-<form action="{% url 'quiz_update' quiz_id %}" method="POST">
+<form action="{% url 'quiz_update' quiz.id %}" method="POST">
     {% csrf_token %}
-    <input type="number" name="id" value="{{ quiz.id }}" required />
-    <input type="text" name="title" required placeholder="Enter Quiz Title"/>
-    <input type="text" name="description" required placeholder="Enter Quiz Name"/>
+    <input type="text" name="title" value="{{ quiz.title }}" required placeholder="Enter Quiz Title"/>
+    <input type="text" name="description" required value="{{ quiz.description }}"  placeholder="Enter Quiz Name"/>
     <input type="submit" value="Update Quiz" />
 </form>

@@ -1,0 +1,9 @@
+<h2>Quiz Detail</h2>
+<h3>{{ quiz.title }} </h3>
+
+<h3> Question List </h3>
+{% for question in question_list %}
+      <li>{{ question.title }}</li>
+{% endfor %}
+
+<a href="{% url 'quiz_edit_page' quiz.id %}">Edit</a>
