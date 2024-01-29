@@ -15,6 +15,7 @@ class Quiz(models.Model):
 class Question(models.Model):  
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     title = models.TextField()
+    priority = models.IntegerField()
 
     # methods
     def __str__(self):

@@ -8,6 +8,7 @@ from django.contrib.auth import logout # Built-in logout function
 from django.contrib.auth.decorators import login_required # for login protected routes
 from django.shortcuts import get_object_or_404 # select လုပ်တဲ့ function
 from app.models import Quiz, Question
+from django.urls import reverse # redirect url တည်ဆောက်ဖို့
 
 def helloWorld(request):
     return HttpResponse("Hello, world. You're at the money app -> index method")
@@ -157,4 +158,25 @@ def quiz_detail_page(request, quiz_id):
     }
     return render(request, 'quiz/quiz_detail.html', data)
 
+# Question Business Logic
+def question_store(request):
+    # user = request.user
+    title = request.POST['title']
+    priority = request.POST['priority']
+    quiz_id = request.POST['quiz_id']
+    quiz = get_object_or_404(Quiz,id = quiz_id)
+    question = Question.objects.create(quiz=quiz, title=title, priority=priority)
+    # go to quiz detail
+
+    # Using reverse to build the URL for 'quiz_detail_page' and including the 'quiz_id' parameter
+    redirect_url = reverse('quiz_detail_page', kwargs={'quiz_id': quiz_id})
+    return redirect(redirect_url)
+# Question UI
+def question_create_page(request):
+    quiz_id = request.GET['quiz_id']
+    data = {
+        'title' : 'Person List',
+        'quiz_id' : quiz_id
+    }
+    return render(request, 'question/question_create.html', data)
 

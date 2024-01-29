@@ -1,0 +1,10 @@
+<h2>Edit Question Form</h2>
+<form action="{% url 'question_update' question.id %}" method="POST">
+    {% csrf_token %}
+    <!-- quiz_id should hidden -->
+    <input type="number" name="quiz_id" value="{{ question.quiz_id }}" />
+    <input type="text" name="title"  value="{{ question.title }}" required placeholder="Enter Question Title"/>
+    <!-- အစီအစဉ် | priority -->
+    <input type="number" name="priority"   value="{{ question.priority }}" required placeholder="Enter Priority"/>
+    <input type="submit" value="Update Question" />
+</form>

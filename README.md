@@ -45,10 +45,18 @@ Quiz -> Question -> Answers
 
 - [x] Quiz Listing
 - [x] Quiz Create
-- [ ] Quiz Detail
-- [ ] Quiz Edit
-- [ ] Quiz Delete
+- [x] Quiz Detail
+- [x] Quiz Edit
+- [x] Quiz Delete
 
 views. ထဲမှာ စုမရေးပဲ
 တစ်ဖိုင်ချင်းစီ ခွဲထုတ်။
 
+
+### Question CRUD
+
+- [ ] Question Listing
+- [ ] Question Create
+- [ ] Question Detail
+- [ ] Question Edit
+- [ ] Question Delete

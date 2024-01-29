@@ -1,0 +1,11 @@
+<h2>New Question Form</h2>
+<!-- ဘယ် Quiz အတွက် မေးခွန်းလဲ​?​ ဒီတော့ Quiz လိုတယ်။​ -->
+<form action="{% url 'question_store' %}" method="POST">
+    {% csrf_token %}
+    <!-- quiz_id should hidden -->
+    <input type="number" name="quiz_id" value="{{ quiz.id }}" />
+    <input type="text" name="title" required placeholder="Enter Question Title"/>
+    <!-- အစီအစဉ် | priority -->
+    <input type="number" name="priority" required placeholder="Enter Priority"/>
+    <input type="submit" value="Create New Question" />
+</form>
