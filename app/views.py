@@ -263,12 +263,18 @@ def answer_create_page(request):
     }
     return render(request, 'answer/answer_create.html', data)
 
-def answer_detail_page(request, question_id):
-    question = get_object_or_404(Question, id=question_id)
-    answer_list = Answer.objects.filter(question = question)
+def answer_detail_page(request, answer_id):
+    answer = get_object_or_404(Answer, id=answer_id)
     data = {
         'title' : 'Answer Detail' , 
-        'question' : question,
-        'answer_list': answer_list
+        'answer' : answer,
     }
-    return render(request, 'question/question_detail.html', data)
+    return render(request, 'answer/answer_detail.html', data)
+
+def answer_edit_page(request, answer_id):
+    answer = get_object_or_404(Answer, id=answer_id)
+    data = {
+        'title' : 'Answer_id Edit' ,
+        'answer' : answer
+    }
+    return render(request, 'answer/answer_edit.html', data)
