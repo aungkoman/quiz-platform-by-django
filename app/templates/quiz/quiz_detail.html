@@ -4,7 +4,10 @@
 <h3> Question List </h3>
 <a href="{% url 'question_create_page' %}?quiz_id={{quiz.id}}">New Question</a>
 {% for question in question_list %}
-      <li>{{ question.title }}</li>
+      <li>
+            question title : {{ question.title }}
+            <a href="{% url 'question_detail_page' question.id %}">Detail</a>
+      </li>
 {% endfor %}
 
 <a href="{% url 'quiz_edit_page' quiz.id %}">Edit</a>

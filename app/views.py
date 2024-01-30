@@ -7,7 +7,7 @@ from django.contrib.auth import login # Built-in login function
 from django.contrib.auth import logout # Built-in logout function
 from django.contrib.auth.decorators import login_required # for login protected routes
 from django.shortcuts import get_object_or_404 # select လုပ်တဲ့ function
-from app.models import Quiz, Question
+from app.models import Quiz, Question, Answer
 from django.urls import reverse # redirect url တည်ဆောက်ဖို့
 
 def helloWorld(request):
@@ -180,4 +180,14 @@ def question_create_page(request):
         'quiz' : quiz
     }
     return render(request, 'question/question_create.html', data)
+
+def question_detail_page(request, question_id):
+    question = get_object_or_404(Question, id=question_id)
+    answer_list = Answer.objects.filter(question = question)
+    data = {
+        'title' : 'Answer Detail' , 
+        'question' : question,
+        'answer_list': answer_list
+    }
+    return render(request, 'question/question_detail.html', data)
 

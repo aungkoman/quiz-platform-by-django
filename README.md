@@ -55,10 +55,11 @@ views. ထဲမှာ စုမရေးပဲ
 
 ### Question CRUD
 
-- [ ] Question Listing
-- [ ] Question Create
+- [x] Question Listing
+- [x] Question Create
 - [ ] Question Detail
 - [ ] Question Edit
 - [ ] Question Delete
 
 Quiz Detail -> new question link 
+

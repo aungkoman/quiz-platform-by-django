@@ -20,3 +20,13 @@ class Question(models.Model):
     # methods
     def __str__(self):
         return self.title
+
+class Answer(models.Model):  
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    title = models.TextField()
+    priority = models.IntegerField(default=0)
+    correct = models.BooleanField(default=False)
+
+    # methods
+    def __str__(self):
+        return self.title
