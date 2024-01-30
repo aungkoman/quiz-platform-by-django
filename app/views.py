@@ -262,3 +262,13 @@ def answer_create_page(request):
         'question' : question
     }
     return render(request, 'answer/answer_create.html', data)
+
+def answer_detail_page(request, question_id):
+    question = get_object_or_404(Question, id=question_id)
+    answer_list = Answer.objects.filter(question = question)
+    data = {
+        'title' : 'Answer Detail' , 
+        'question' : question,
+        'answer_list': answer_list
+    }
+    return render(request, 'question/question_detail.html', data)
