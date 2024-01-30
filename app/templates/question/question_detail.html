@@ -1,3 +1,16 @@
 <h2>Question Detail</h2>
 <h3>{{ question.title }}</h3>
-<h3>priority : {{ question.priority }} </h3>
+<h3>priority : {{ question.priority }}</h3>
+
+<h3>Answer List</h3>
+<a href="{% url 'answer_create_page' %}?question_id={{question.id}}"
+  >New Answer</a
+>
+{% for answer in answer_list %}
+<li>
+  answer title : {{ answer.title }}
+  <a href="{% url 'answer_detail_page' answer.id %}">Detail</a>
+  <a href="{% url 'answer_edit_page' answer.id %}">Edit</a>
+  <a href="{% url 'answer_delete' answer.id %}">Delete</a>
+</li>
+{% endfor %}

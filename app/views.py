@@ -224,7 +224,12 @@ def answer_store(request):
     title = request.POST['title']
     priority = request.POST['priority']
     question_id = request.POST['question_id']
-    correct = request.POST['correct']
+    correct = request.POST.get('correct', False) # checkbox က tick မလုပ်ရင် request ထဲမှာကို ပါမလာ request.POST['correct']
+    if correct == 'true':
+        correct = True
+    else:
+        correct = False
+    # return HttpResponse(correct)
     question = get_object_or_404(Question,id = question_id)
     question = Answer.objects.create(question=question, title=title, priority=priority, correct=correct)
     # go to upper level -> question detail

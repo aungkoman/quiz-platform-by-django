@@ -76,3 +76,12 @@ question detail မှာ edit နဲ့ delete link  ထည့်ရန်။
 
 template တွေရေးပြီးရင်
 view ဆက်ရေး။
+urls ရေး။
+
+ပြီးရင် စချိတ်။
+
+Create 
+List
+Edit
+Delete
+Detail
