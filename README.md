@@ -60,3 +60,5 @@ views. ထဲမှာ စုမရေးပဲ
 - [ ] Question Detail
 - [ ] Question Edit
 - [ ] Question Delete
+
+Quiz Detail -> new question link 

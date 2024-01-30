@@ -2,6 +2,7 @@
 <h3>{{ quiz.title }} </h3>
 
 <h3> Question List </h3>
+<a href="{% url 'question_create_page' %}?quiz_id={{quiz.id}}">New Question</a>
 {% for question in question_list %}
       <li>{{ question.title }}</li>
 {% endfor %}

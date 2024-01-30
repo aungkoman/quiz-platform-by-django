@@ -174,9 +174,10 @@ def question_store(request):
 # Question UI
 def question_create_page(request):
     quiz_id = request.GET['quiz_id']
+    quiz = get_object_or_404(Quiz, id=quiz_id)
     data = {
         'title' : 'Person List',
-        'quiz_id' : quiz_id
+        'quiz' : quiz
     }
     return render(request, 'question/question_create.html', data)
 
