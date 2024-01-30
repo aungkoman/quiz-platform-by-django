@@ -23,6 +23,8 @@ urlpatterns = [
     # Questions - UI
     path('question/create/', views.question_create_page, name='question_create_page'),
     path('question/detail/<int:question_id>/', views.question_detail_page, name='question_detail_page'),
+    path('question/edit/<int:question_id>/', views.question_edit_page, name='question_edit_page'),
     # Questions - Business Logic
     path('question/store/', views.question_store, name='question_store'),
+    path('question/update/<int:question_id>/', views.question_update, name='question_update'),
 ]

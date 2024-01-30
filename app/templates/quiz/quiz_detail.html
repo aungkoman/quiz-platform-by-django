@@ -1,6 +1,5 @@
 <h2>Quiz Detail</h2>
 <h3>title : {{ quiz.title }} </h3>
-<h3>priority : {{ quiz.priority }} </h3>
 
 <h3> Question List </h3>
 <a href="{% url 'question_create_page' %}?quiz_id={{quiz.id}}">New Question</a>
@@ -8,6 +7,7 @@
       <li>
             question title : {{ question.title }}
             <a href="{% url 'question_detail_page' question.id %}">Detail</a>
+            <a href="{% url 'question_edit_page' question.id %}">Edit</a>
       </li>
 {% endfor %}
 

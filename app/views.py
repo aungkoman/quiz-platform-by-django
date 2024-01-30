@@ -171,6 +171,18 @@ def question_store(request):
     # Using reverse to build the URL for 'quiz_detail_page' and including the 'quiz_id' parameter
     redirect_url = reverse('quiz_detail_page', kwargs={'quiz_id': quiz_id})
     return redirect(redirect_url)
+
+def question_update(request, question_id):
+    question = get_object_or_404(Question, id=question_id)
+    title = request.POST['title']
+    question.title = title
+    # description = request.POST['description']
+    # quiz.description = description
+    question.save()
+    # Go to question detail
+    # Redirect to the 'question_detail_page' with the specified 'question_id'
+    return redirect(reverse('question_detail_page', args=[question_id]))
+
 # Question UI
 def question_create_page(request):
     quiz_id = request.GET['quiz_id']
@@ -191,3 +203,10 @@ def question_detail_page(request, question_id):
     }
     return render(request, 'question/question_detail.html', data)
 
+def question_edit_page(request, question_id):
+    question = get_object_or_404(Question, id=question_id)
+    data = {
+        'title' : 'Question Edit' ,
+        'question' : question
+    }
+    return render(request, 'question/question_edit.html', data)
