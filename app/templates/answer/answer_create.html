@@ -1,0 +1,15 @@
+<h2>New Answer Form</h2>
+<!-- ဘယ် Question အတွက် အဖြေလဲ?​ ဒီတော့ Question လိုတယ်။​ -->
+<form action="{% url 'answer_store' %}" method="POST">
+  {% csrf_token %}
+  <!-- quiz_id should hidden -->
+  <input type="number" name="question_id" value="{{ question.id }}" />
+  <input type="text" name="title" required placeholder="Enter Question Title" />
+  <!-- အစီအစဉ် | priority -->
+  <input type="number" name="priority" required placeholder="Enter Priority" />
+  <!-- အဖြေမှန်လား? | correct -->
+  <input type="checkbox" id="correct" name="correct" value="true" />
+  <label for="correct"> Correct Answer</label><br />
+  
+  <input type="submit" value="Create New Question" />
+</form>

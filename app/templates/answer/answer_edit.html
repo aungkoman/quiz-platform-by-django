@@ -1,0 +1,14 @@
+<h2>Edit Answer Form</h2>
+<form action="{% url 'answer_update' answer.id %}" method="POST">
+    {% csrf_token %}
+    <!-- question_id should hidden -->
+    <input type="number" name="question_id" value="{{ answer.question_id }}" />
+    <input type="text" name="title"  value="{{ answer.title }}" required placeholder="Enter Question Title"/>
+    <!-- အစီအစဉ် | priority -->
+    <input type="number" name="priority"   value="{{ answer.priority }}" required placeholder="Enter Priority"/>
+    <!-- အဖြေမှန်လား? | correct -->
+    <input type="checkbox" name="correct" {% if answer.correct %}checked{% endif %} />
+    <label for="correct"> Correct Answer</label><br />
+
+    <input type="submit" value="Update Answer" />
+</form>

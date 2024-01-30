@@ -59,9 +59,17 @@ views. ထဲမှာ စုမရေးပဲ
 - [x] Question Create
 - [x] Question Detail
 - [x] Question Edit
-- [ ] Question Delete
+- [x] Question Delete
 
 Quiz Detail -> new question link 
 
 question detail မှာ edit နဲ့ delete link  ထည့်ရန်။
 
+
+### Answer CRUD
+
+- [ ] Answer Listing
+- [ ] Answer Create
+- [ ] Answer Detail
+- [ ] Answer Edit
+- [ ] Answer Delete
