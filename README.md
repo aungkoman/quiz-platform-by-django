@@ -73,3 +73,6 @@ question detail မှာ edit နဲ့ delete link  ထည့်ရန်။
 - [ ] Answer Detail
 - [ ] Answer Edit
 - [ ] Answer Delete
+
+template တွေရေးပြီးရင်
+view ဆက်ရေး။

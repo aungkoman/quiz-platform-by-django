@@ -216,3 +216,18 @@ def question_edit_page(request, question_id):
         'question' : question
     }
     return render(request, 'question/question_edit.html', data)
+
+
+# Answer Business Logic
+def answer_store(request):
+    # user = request.user
+    title = request.POST['title']
+    priority = request.POST['priority']
+    question_id = request.POST['question_id']
+    correct = request.POST['correct']
+    question = get_object_or_404(Question,id = question_id)
+    question = Answer.objects.create(question=question, title=title, priority=priority, correct=correct)
+    # go to upper level -> question detail
+    # Using reverse to build the URL for 'quiz_detail_page' and including the 'quiz_id' parameter
+    redirect_url = reverse('question_detail_page', kwargs={'question_id': question_id})
+    return redirect(redirect_url)
