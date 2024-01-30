@@ -252,3 +252,13 @@ def answer_delete(request, answer_id):
     answer.delete()
     # Where we go? go to question page 
     return redirect(reverse('question_detail_page', args=[question_id]))
+
+# Answer UI
+def answer_create_page(request):
+    question_id = request.GET['question_id']
+    question = get_object_or_404(Question, id=question_id)
+    data = {
+        'title' : 'Create New Answer',
+        'question' : question
+    }
+    return render(request, 'answer/answer_create.html', data)
