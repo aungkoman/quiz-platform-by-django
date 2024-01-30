@@ -183,6 +183,12 @@ def question_update(request, question_id):
     # Redirect to the 'question_detail_page' with the specified 'question_id'
     return redirect(reverse('question_detail_page', args=[question_id]))
 
+def question_delete(request, question_id):
+    question = get_object_or_404(Question, id=question_id)
+    quiz_id = question.quiz.id
+    question.delete()
+    # Where we go? go to quiz page 
+    return redirect(reverse('quiz_detail_page', args=[quiz_id]))
 # Question UI
 def question_create_page(request):
     quiz_id = request.GET['quiz_id']

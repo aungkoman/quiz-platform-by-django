@@ -58,7 +58,7 @@ views. ထဲမှာ စုမရေးပဲ
 - [x] Question Listing
 - [x] Question Create
 - [x] Question Detail
-- [ ] Question Edit
+- [x] Question Edit
 - [ ] Question Delete
 
 Quiz Detail -> new question link 

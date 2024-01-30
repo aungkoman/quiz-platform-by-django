@@ -27,4 +27,5 @@ urlpatterns = [
     # Questions - Business Logic
     path('question/store/', views.question_store, name='question_store'),
     path('question/update/<int:question_id>/', views.question_update, name='question_update'),
+    path('question/delete/<int:question_id>/', views.question_delete, name='question_delete'),
 ]

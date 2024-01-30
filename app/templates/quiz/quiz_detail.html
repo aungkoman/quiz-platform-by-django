@@ -1,6 +1,9 @@
 <h2>Quiz Detail</h2>
 <h3>title : {{ quiz.title }} </h3>
 
+<a href="{% url 'quiz_edit_page' quiz.id %}">Edit Quiz</a>
+<a href="{% url 'quiz_delete' quiz.id %}">Delete Quiz</a>
+
 <h3> Question List </h3>
 <a href="{% url 'question_create_page' %}?quiz_id={{quiz.id}}">New Question</a>
 {% for question in question_list %}
@@ -8,7 +11,7 @@
             question title : {{ question.title }}
             <a href="{% url 'question_detail_page' question.id %}">Detail</a>
             <a href="{% url 'question_edit_page' question.id %}">Edit</a>
+            <a href="{% url 'question_delete' question.id %}">Delete</a>
       </li>
 {% endfor %}
 
-<a href="{% url 'quiz_edit_page' quiz.id %}">Edit</a>
