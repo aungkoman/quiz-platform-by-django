@@ -231,3 +231,17 @@ def answer_store(request):
     # Using reverse to build the URL for 'quiz_detail_page' and including the 'quiz_id' parameter
     redirect_url = reverse('question_detail_page', kwargs={'question_id': question_id})
     return redirect(redirect_url)
+
+def answer_update(request, answer_id):
+    answer = get_object_or_404(Answer, id=answer_id)
+    title = request.POST['title']
+    priority = request.POST['priority']
+    correct = request.POST['correct']
+
+    answer.title = title
+    answer.priority = priority
+    answer.correct = correct
+    answer.save()
+    # Go to answer detail
+    # Redirect to the 'question_detail_page' with the specified 'question_id'
+    return redirect(reverse('answer_detail_page', args=[answer_id]))
