@@ -68,11 +68,11 @@ question detail မှာ edit နဲ့ delete link  ထည့်ရန်။
 
 ### Answer CRUD
 
-- [ ] Answer Listing
-- [ ] Answer Create
-- [ ] Answer Detail
-- [ ] Answer Edit
-- [ ] Answer Delete
+- [x] Answer Listing
+- [x] Answer Create
+- [x] Answer Detail
+- [x] Answer Edit
+- [x] Answer Delete
 
 template တွေရေးပြီးရင်
 view ဆက်ရေး။
@@ -85,3 +85,10 @@ List
 Edit
 Delete
 Detail
+
+Quiz တစ်ခု Management လုပ်လို့ရပြီ။
+
+UI ပြင်မယ်။
+
+​Breadcrumbs Navigation ထည့်မယ်။
+
