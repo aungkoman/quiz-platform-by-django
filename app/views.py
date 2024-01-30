@@ -245,3 +245,10 @@ def answer_update(request, answer_id):
     # Go to answer detail
     # Redirect to the 'question_detail_page' with the specified 'question_id'
     return redirect(reverse('answer_detail_page', args=[answer_id]))
+
+def answer_delete(request, answer_id):
+    answer = get_object_or_404(Answer, id=answer_id)
+    question_id = answer.question.id
+    answer.delete()
+    # Where we go? go to question page 
+    return redirect(reverse('question_detail_page', args=[question_id]))
